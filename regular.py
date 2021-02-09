@@ -159,37 +159,3 @@ mo=re.sub(re.escape(result[1]),text[0],mo)
 mo=re.sub(re.escape(result[3]),text[1],mo)
 mo=re.sub(re.escape(result[5]),text[2],mo)
 mo=re.sub(re.escape(result[7]),text[3],mo)
-
-def findf(str1,n):
-	a=str1.find('-',n)
-	b=str1.index('%',str1.find('-',n))+1
-	return a,b
-
-print(mo.count('-'))
-n1=findf(mo,1)
-n2=findf(mo,n1[1])
-
-print(mo[n1[0]:n1[1]])
-print(mo[n2[0]:n2[1]])
-
-class MyNumbers:
-	def __iter__(self):
-		self.n = 1
-		return self
-
-	def __next__(self):
-		if self.n <= str1.count('-'):
-			str1='WOW: -12.3% YOY(W): +12.3%   MOM: -1.3% YOY(M): -0.3% '
-			start=1
-			a=str1.find('-',start)
-			b=str1.index('%',str1.find('-',start))+1
-			start=b
-			self.n += 1
-			return a,b
-		else:
-			raise StopIteration
-
-res=MyNumbers()
-myiter = iter(res)
-for x in myiter:
-  print(x)
